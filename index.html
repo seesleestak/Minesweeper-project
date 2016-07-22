@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Minesweeper</title>
+        <link href="./css/minesweeper.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <header class="toolbar">
+            <div class="close"></div>
+            <div class="minimize"></div>
+
+            <span class="title">
+                Minesweeper (16 x 16)
+            </span>
+        </header>
+
+        <div class="viewportContainer" id="vc">
+            <!-- Gameboard dynamically generated -->
+            <script src="./js/test.js"></script>
+
+            <div class="infoBar">
+                <div class="mineCounter">
+                    <p>Mines</p>
+                    <div class="mineCountField"></div>
+                </div>
+
+                <div class="timeContainer">
+                    <p>Timer</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/game.js"></script>
+    </body>
+</html>

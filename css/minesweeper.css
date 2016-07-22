@@ -1,0 +1,106 @@
+body {
+    height: auto;
+    width: auto;
+    font-family: sans-serif;
+    margin: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.close {
+    display: inline-flex;
+    order: 1;
+    -webkit-app-region: no-drag;
+    height: 1em;
+    width: 1em;
+    border-radius: .5em;
+    background-color: rgb(247, 43, 43);
+    margin: .35em .3em .35em .6em;
+}
+
+.close:active {
+    background-color: rgb(200, 43, 43);
+}
+
+.minimize {
+    display: inline-flex;
+    order: 2;
+    -webkit-app-region: no-drag;
+    height: 1em;
+    width: 1em;
+    border-radius: .5em;
+    background-color: rgb(255, 221, 40);
+    margin: .35em .15em;
+}
+
+.minimize:active {
+    background-color: rgb(231, 198, 22);
+}
+
+.toolbar {
+    display: inline-flex;
+    flex-direction: row;
+    -webkit-app-region: drag;
+    width: 100%;
+    background-color: rgb(36, 38, 73);
+    height: 1.75em;
+    box-shadow: 0 0.15em .5em 0 rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    order: 3;
+    font-size: .96em;
+    font-weight: bold;
+    color: white;
+    margin: .25em 7em;
+}
+
+.viewportContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-hide {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: rgb(112, 112, 112);
+    border-radius: .15em;
+    margin: .15em .15em;
+    cursor: pointer;
+}
+
+.btn-hide:hover {
+    transition: 150ms;
+    background-color: rgb(89, 89, 89);
+}
+
+.btn-show {
+    display: none;
+    height: 1.5em;
+    width: 1.5em;
+    background-color: rgb(171, 171, 171);
+    border-radius: .15em;
+}
+
+.gameboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    order: 1;
+    height: 100%;
+    width: 37em;
+    margin: .5em 0 .5em .45em;
+}
+
+.infoBar {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    width: 14em;
+    margin: .5em .5em;
+    background-color: rgb(121, 121, 121);
+}
