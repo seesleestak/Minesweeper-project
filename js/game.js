@@ -43,6 +43,11 @@ function bindEvents() {
         'click',
         gameboardHandler
     );
+
+    gameboard.addEventListener(
+        'click',
+        startTimer
+    )
 }
 
 function dragHandler(el){
@@ -65,4 +70,19 @@ function toolbarHandler(el) {
 
 function gameboardHandler(el) {
 
+}
+
+function startTimer(el) {
+    gameboard.removeEventListener(
+        'click',
+        startTimer
+    );
+
+    let sec = 0;
+    const timer = document.getElementById('time');
+    setInterval(setTime, 1000);
+
+    function setTime() {
+        timer.innerHTML(++sec%60);
+    }
 }

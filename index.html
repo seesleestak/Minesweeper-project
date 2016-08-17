@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Minesweeper</title>
-        <link href="./css/minesweeper.css" rel="stylesheet" />
+        <link href="./css/style.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -18,7 +18,7 @@
 
         <div class="viewportContainer" id="vc">
             <!-- Gameboard dynamically generated -->
-            <script src="./js/test.js"></script>
+            <script src="./js/layout.js"></script>
 
             <div class="infoBar">
                 <div class="mineCounter">
@@ -28,6 +28,9 @@
 
                 <div class="timeContainer">
                     <p>Timer</p>
+                    <div id="timerId" class="timerField">
+                        <p id="time"></p>
+                    </div>
                 </div>
             </div>
         </div>
