@@ -5,14 +5,11 @@ flexContain.setAttribute('class', 'gameboard');
 
 for(let i=1; i<=256; i++) {
     let newBtn = document.createElement('div');
-    newBtn.className = 'btn-hide';
+    newBtn.className = 'btn';
 
-    let newBtnBot = document.createElement('div');
-    newBtnBot.className = 'btn-show';
-    newBtnBot.setAttribute("id", `gameboard-${i}`);
+    newBtn.setAttribute("id", `gameboard-${i}`);
     let btnArray = [i];
-    newBtn.appendChild(newBtnBot);
-    
+
     flexContain.appendChild(newBtn);
 }
 
