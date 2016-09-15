@@ -3,13 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <title>Minesweeper</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
         <link href="./css/style.css" rel="stylesheet" />
     </head>
 
     <body>
         <header class="toolbar">
-            <div class="close"></div>
-            <div class="minimize"></div>
+            <div class="closeBtn"></div>
+            <div class="minimizeBtn"></div>
 
             <span class="title">
                 Minesweeper (16 x 16)
@@ -17,9 +19,6 @@
         </header>
 
         <div class="viewportContainer" id="vc">
-            <!-- Gameboard dynamically generated -->
-            <script src="./js/layout.js"></script>
-
             <div class="infoBar">
                 <div class="mineCounter">
                     <p>Mines</p>
@@ -29,11 +28,14 @@
                 <div class="timeContainer">
                     <p>Timer</p>
                     <div id="timerId" class="timerField">
-                        <p id="time"></p>
+                        <p id="time" class="timeInner"></p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Gameboard dynamically generated -->
+        <script src="./js/layout.js"></script>
 
         <script src="./js/game.js"></script>
     </body>

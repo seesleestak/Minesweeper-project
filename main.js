@@ -24,7 +24,7 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow(
         {
             width: 660,
-            height: 505,
+            height: 462,
             frame: false,
             resizable: false,
             alwaysOnTop: false
@@ -33,9 +33,6 @@ app.on('ready', function() {
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
