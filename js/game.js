@@ -75,8 +75,7 @@ function generateNumbers() {
 
 function bindEvents() {
     const toolbarControls = document.querySelector('.toolbar');
-    const gameboard = document.querySelector('.gameboard');
-    const tile = document.querySelector('.btn');
+    const gameboard = document.querySelectorAll('div.btn');
 
     toolbarControls.addEventListener(
         'click',
@@ -88,25 +87,17 @@ function bindEvents() {
         dragHandler
     );
 
-    gameboard.addEventListener(
-        'click',
-        gameboardHandler
-    );
+    for (let j = 0; j < gameboard.length; j++){
+        gameboard[j].addEventListener(
+            'click',
+            startTimer
+        );
 
-    gameboard.addEventListener(
-        'click',
-        startTimer
-    );
-
-    gameboard.addEventListener(
-        'contextmenu',
-        flagHandler
-    );
-
-    tile.addEventListener(
-        'click',
-        showTile
-    );
+        gameboard[j].addEventListener(
+            'contextmenu',
+            flagHandler
+        );
+    }
 }
 
 function dragHandler(el) {
@@ -118,28 +109,26 @@ function dragHandler(el) {
 
 function toolbarHandler(el) {
     switch (el.target.className) {
-        case 'closeBtn':
+        case 'closeButton':
             electron.close();
             break;
-        case 'minimizeBtn':
+        case 'minimizeButton':
             electron.minimize();
             break;
     }
 }
 
-function gameboardHandler(el) {
+function startTimer(el) {
+    const gameboard = document.querySelectorAll('div.btn');
 
-}
+    for (let n = 0; n < gameboard.length; n++) {
+        gameboard[n].removeEventListener(
+            'click',
+            startTimer
+        );
+    }
 
-function startTimer() {
-    const gameboard = document.querySelector('.gameboard');
-
-    gameboard.removeEventListener(
-        'click',
-        startTimer
-    );
-
-    let sec = 996;
+    let sec = 0;
     const timer = document.getElementById('time');
     setInterval(setTime, 1000);
 
@@ -156,17 +145,16 @@ function startTimer() {
 }
 
 function flagHandler(el) {
-    console.log('right click');
-    /*
-    if (already flag) {
-        remove flag
+    console.log(el.target);
+
+    if (el.target.querySelector('span') !== null) {
+        el.target.removeChild('span');
     }
     else {
-        add flag
+        let flagElement = document.createElement("span");
+        flagElement.setAttribute("class", "glyphicon glyphicon-flag");
+        flagElement.setAttribute("aria-hidden", "true");
+
+        el.target.appendChild(flagElement);
     }
-    */
-}
-
-function showTile() {
-
 }
