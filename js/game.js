@@ -41,35 +41,31 @@ function generateNumbers() {
         const observedElement = document.getElementById(`gameboard-${k}`);
         console.log(observedElement);
 
-        /*
-        if (k == 1) {
-            // top left corner
-        }
-        elseif (k == 16) {
-            // top right corner
-        }
-        elseif (k == 241) {
-            // bottom left corner
-        }
-        elseif (k == 256) {
-            // bottom right corner
-        }
-        elseif (1 <= k <= 16) {
-            // top row
-        }
-        elseif () {
-            // bottom row
-        }
-        elseif () {
-            // left column
-        }
-        elseif () {
-            // right column
+        if (1 <= k <= 16 || 241 <= k <= 256) {
+            // rows
+            if (k == 1) {
+                // top left corner
+            }
+            elseif (2 <= k <= 15) {
+                // top row
+            }
+            elseif (k == 16) {
+                // top right corner
+            }
+            elseif (k == 241) {
+                // bottom left corner
+            }
+            elseif (242 <= k <= 255) {
+                // bottom row
+            }
+            elseif (k == 256) {
+                // bottom right corner
+            }
         }
         else {
             // normal cell with 8 adjacent cells
         }
-        */
+
     }
 }
 
